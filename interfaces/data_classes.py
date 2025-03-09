@@ -10,6 +10,8 @@ class GitBlob(BaseModel):
     def from_blob(cls, blob):
         return cls(content=blob.data_stream.read(), path=blob.path)
 
+class ApiAdminLogIn(BaseModel):
+    password: str
 
 class ApiAdminPayloads(BaseModel):
     company_name: str
@@ -19,10 +21,9 @@ class ApiAdminPayloads(BaseModel):
 
 class ApiEntryMemory(BaseModel):
     user: str
-    response: str
-
+    message: str
 
 class ApiUserPayloads(BaseModel):
-    company_name: str
+    company_name: str = ""
     qa_history: list[ApiEntryMemory]
     answer: ApiEntryMemory = None

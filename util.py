@@ -71,16 +71,16 @@ def create_ensemble_retriever(
     )
 
 
-def load_source_cache(company_name, path: os.PathLike):
+def load_source_cache(path: os.PathLike):
     try:
-        with open(f"{path}/{company_name.lower()}_vector_store", "rb") as file:
+        with open(f"{path}/vector_store", "rb") as file:
             # Use the same local embedding model for deserialization
             vector_store = FAISS.deserialize_from_bytes(
                 file.read(),
                 OllamaEmbeddings(base_url=emb_config_list[0]["base_url"],
                                  model=emb_config_list[0]["model"])
             )
-        with open(f"{path}/{company_name.lower()}_text_documents.json", 'r') as file:
+        with open(f"{path}/text_documents.json", 'r') as file:
             data = json.load(file)
             text_documents = [Document(**doc) for doc in data]
 
@@ -92,12 +92,12 @@ def load_source_cache(company_name, path: os.PathLike):
 
 
 # save_source remains the same
-def save_source(vector_store, text_documents, path, company_name):
+def save_source(vector_store, text_documents, path):
     os.makedirs(path, exist_ok=True)
 
-    with open(f"{path}/{company_name.lower()}_vector_store", "wb") as file:
+    with open(f"{path}/vector_store", "wb") as file:
         file.write(vector_store.serialize_to_bytes())
 
-    with open(f"{path}/{company_name.lower()}_text_documents.json", "w") as file:
+    with open(f"{path}/text_documents.json", "w") as file:
         json_string = json.dumps(jsonable_encoder(text_documents), indent=4)
         file.write(json_string)

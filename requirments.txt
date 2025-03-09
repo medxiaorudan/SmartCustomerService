@@ -9,3 +9,4 @@ faiss-cpu
 langchain
 langchain-community
 rank_bm25
+pyjwt

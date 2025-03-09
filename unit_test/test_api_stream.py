@@ -12,15 +12,15 @@ def test_chat_stream():
         "qa_history": [
             {
                 "user": "Rudan",
-                "response": "What's Tendium working style"
+                "message": "What's Tendium working style"
             },
             {
                 "user": "agent",
-                "response": "Tendium adopts a risk-based approach. This means that it continuously works towards optimizing services by analyzing potential risks in terms of cost management and identifying anticipated consequences. By adopting such an approach, Tendium aims to deliver secure and safe services while ensuring compliance with internal and external routines as per the established policies and guidelines within its organization."
+                "message": "Tendium adopts a risk-based approach. This means that it continuously works towards optimizing services by analyzing potential risks in terms of cost management and identifying anticipated consequences. By adopting such an approach, Tendium aims to deliver secure and safe services while ensuring compliance with internal and external routines as per the established policies and guidelines within its organization."
             },
             {
                 "user": "Rudan",
-                "response": "Translate this into Swedish."
+                "message": "Translate this into Swedish."
             }
         ]
     }

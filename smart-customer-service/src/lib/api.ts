@@ -1,10 +1,39 @@
 const API_PATH = 'http://localhost:8000';
+let SAVED_TOKEN: string = '-';
 
-export async function uploadUrls(password, companyName: string, urls: string[]) {
+export const getToken = async (password: string) => {
+   const requestBody = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password: password }),
+  };
+  console.log('Sending getToken', requestBody)
+
+  const response = await fetch(`${API_PATH}/get_token`, requestBody);
+  console.log('Login Response', response)
+
+
+  if (!response.ok) throw new Error("Failed to Login");
+  const json = await response.json();
+  SAVED_TOKEN = json;
+  return json;
+}
+
+export const getCompanies = async () => {
+  const requestBody = {
+   method: "GET",
+   headers: { "Content-Type": "application/json" },
+ };
+
+ const response = await fetch(`${API_PATH}/user/get_companies`, requestBody);
+ return response.json();
+}
+
+export async function uploadUrls(companyName: string, urls: string[], files? = undefined) {
 
   const requestBody = {
     method: "PUT",
-    headers: { "Content-Type": "application/json", "Authorization": password },
+    headers: { "Content-Type": "application/json", "Authorization": `Bearer ${SAVED_TOKEN}` },
     body: JSON.stringify({ company_name: companyName, urls:urls }),
   };
   console.log(requestBody)
@@ -16,25 +45,32 @@ export async function uploadUrls(password, companyName: string, urls: string[]) 
   return response.json();
 }
 
-export async function uploadFile(file: File) {
-  const formData = new FormData();
-  formData.append("file", file);
-
-  const response = await fetch("https://your-backend.com/api/upload-file", {
-    method: "POST",
-    body: formData,
-  });
-
-  if (!response.ok) throw new Error("Failed to upload file");
-  return response.json();
+export interface Message {
+  user: string;
+  message: string
 }
 
-export async function sendMessage(message: string) {
-  const response = await fetch("https://your-backend.com/api/chat", {
-    method: "POST",
+export interface ChatResponseType {
+  company_name: string;
+  qa_history: Message[];
+  answer: Message;
+}
+
+export async function sendMessage(companyName: string, message: string, username: string): Promise<ChatResponseType> {
+  const qaHistory = [
+    {
+      user: username,
+      message: message,
+    }
+  ]
+  const requestBody = {
+    method: "PUT",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message }),
-  });
+    body: JSON.stringify({ company_name: companyName, qa_history: qaHistory }),
+  };
+  console.log(requestBody)
+
+  const response = await fetch(`${API_PATH}/user/chat`, requestBody);
 
   if (!response.ok) throw new Error("Failed to send message");
   return response.json();
