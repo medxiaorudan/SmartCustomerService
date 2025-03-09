@@ -1,0 +1,11 @@
+PyPDF2
+python-docx
+openpyxl
+requests
+beautifulsoup4
+pyautogen
+sentence-transformers
+faiss-cpu
+langchain
+langchain-community
+rank_bm25
