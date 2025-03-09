@@ -1,4 +1,5 @@
-const API_PATH = 'http://localhost:8000';
+// const API_PATH = 'http://localhost:8000';
+const API_PATH = 'http://192.168.1.247:8000';
 let SAVED_TOKEN: string = '-';
 
 export const getToken = async (password: string) => {
