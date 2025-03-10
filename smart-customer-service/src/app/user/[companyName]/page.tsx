@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useParams } from "next/navigation";  // Correct hook to use in App Router
 import { Message, sendMessage } from "@/lib/api";
 
@@ -28,7 +28,8 @@ export default function User() {
       const result = await sendMessage(companyName as string, message, username);  // Send message to backend with companyName
       addMessage({ user: companyName as string, message: result.answer.message});  // Assuming sendMessage returns a response
       setFeedbackBoxMessage("");
-    } catch (error) {
+    } catch (error) { 
+      console.error(error);
       setFeedbackBoxMessage("Failed to send message. Please try again.");
     }
   };

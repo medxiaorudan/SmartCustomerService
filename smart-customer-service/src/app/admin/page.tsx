@@ -5,8 +5,6 @@ import { uploadUrls, getToken } from "@/lib/api";
 
 export default function Admin() {
   const [urls, setUrls] = useState("");
-  const [file, setFile] = useState<File | null>(null);
-  const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
@@ -14,7 +12,7 @@ export default function Admin() {
   async function login(password: string) {
       try {
         console.log('Login in ...', password);
-        const loggedIn = await getToken(password);
+        await getToken(password);
         setLoggedIn(true);
       } catch (e) {
           console.warn('Failed to login', e)
@@ -58,11 +56,8 @@ export default function Admin() {
                 onChange={(e) => setUrls(e.target.value)}
                 className="border p-3 w-full h-32 rounded-lg"
               />
-
-              <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} className="mt-4 w-full" />
               <button onClick={() => uploadUrls(companyName, urls.split("\n"))} className="mt-2">Upload</button>
 
-              {message && <p className="mt-4 text-red-500">{message}</p>}
 
         </div>
       )}

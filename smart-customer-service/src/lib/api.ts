@@ -31,7 +31,7 @@ export const getCompanies = async () => {
  return response.json();
 }
 
-export async function uploadUrls(companyName: string, urls: string[], files = undefined) {
+export async function uploadUrls(companyName: string, urls: string[]) {
 
   const requestBody = {
     method: "PUT",

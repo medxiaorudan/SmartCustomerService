@@ -1,8 +1,6 @@
 "use client";
 
-import { getCompanies } from "@/lib/api";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home() {
   return (
