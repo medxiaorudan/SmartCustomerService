@@ -35,12 +35,17 @@ tags_metadata = [
 
 app = FastAPI(openapi_tags=tags_metadata)
 
+origins = [
+    "http://localhost:3000",   # Local frontend
+    "https://829c-82-183-1-59.ngrok-free.app"  # NGROK Backend URL
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow requests from any frontend
+    allow_origins=origins,  # Allows requests from these origins
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, PUT, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 
