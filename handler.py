@@ -40,7 +40,7 @@ async def qa_initiate_function(qa_init: ApiUserPayloads) -> ApiUserPayloads:
     init_question = "\n\n#########################\n\n".join(
         [f"{messages.message}" for messages in qa_init.qa_history])
 
-    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name}"))
+    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name.lower()}"))
     answer_data = get_init_answer(init_question, text_documents, vector_store)
 
     qa_init.answer = ApiEntryMemory(user="agent", message=answer_data)
@@ -53,7 +53,7 @@ def qa_stream_function(qa_init: ApiUserPayloads):
     init_question = "\n\n#########################\n\n".join(
         [f"{messages.user}\n{messages.response}" for messages in qa_init.qa_history])
 
-    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name}"))
+    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name.lower()}"))
     for chunk in stream_answer(init_question, text_documents, vector_store):
         # Format as proper NDJSON
         yield create_json_response("streaming", chunk)

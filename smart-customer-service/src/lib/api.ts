@@ -1,5 +1,5 @@
-// const API_PATH = 'http://localhost:8000';
-const API_PATH = 'https://0b01-82-183-1-59.ngrok-free.app';
+const API_PATH = 'http://localhost:8000';
+// const API_PATH = 'https://0b01-82-183-1-59.ngrok-free.app';
 let SAVED_TOKEN: string = '-';
 
 export const getToken = async (password: string) => {
@@ -14,7 +14,7 @@ export const getToken = async (password: string) => {
   console.log('Login Response', response)
 
 
-  if (!response.ok) throw new Error("Failed to Login");cl
+  if (!response.ok) throw new Error("Failed to Login");
   const json = await response.json();
   SAVED_TOKEN = json;
   return json;
