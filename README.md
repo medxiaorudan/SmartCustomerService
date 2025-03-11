@@ -32,7 +32,33 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
    cd SmartCustomerService
    ```
 
-2. **Backend Setup**:
+2. **Ollama Setup for Local Deployment**:
+
+   - **Install Ollama**:
+
+     Download and install Ollama onto your platform. Instructions are available on the [Ollama website](https://ollama.com/).
+
+   - **Deploy DeepSeek-R1 Model Locally**:
+
+     Use Ollama to pull and run the DeepSeek-v2 model:
+
+     ```bash
+     ollama pull deepseek-v2
+     ```
+
+     This command downloads the DeepSeek-R1 model for local use. 
+
+   - **Deploy bge-large Embedding Model Locally**:
+
+     Similarly, pull the bge-large embedding model:
+
+     ```bash
+     ollama pull bge-large
+     ```
+
+     This command downloads the bge-large embedding model for local use.
+     
+3. **Backend Setup**:
 
    - Create and activate a virtual environment:
 
@@ -55,7 +81,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
      The backend API will be accessible at `http://127.0.0.1:8000`.
 
-3. **Frontend Setup**:
+4. **Frontend Setup**:
 
    - Navigate to the frontend directory:
 
@@ -77,36 +103,11 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
      The frontend will be accessible at `http://localhost:3000`.
 
-4. **Ollama Setup for Local Deployment**:
-
-   - **Install Ollama**:
-
-     Download and install Ollama onto your platform. Instructions are available on the [Ollama website](https://ollama.com/).
-
-   - **Deploy DeepSeek-R1 Model Locally**:
-
-     Use Ollama to pull and run the DeepSeek-R1 model:
-
-     ```bash
-     ollama pull deepseek-v2
-     ```
-
-     This command downloads the DeepSeek-R1 model for local use. citeturn0search0
-
-   - **Deploy bge-large Embedding Model Locally**:
-
-     Similarly, pull the bge-large embedding model:
-
-     ```bash
-     ollama pull bge-large
-     ```
-
-     This command downloads the bge-large embedding model for local use. citeturn0search5
 
 ## Usage
 
 - **Admin Access**: Navigate to the admin login page at `http://localhost:3000/admin` and enter your credentials to upload or manage company information.
-- **User Interaction**: Visit the homepage at `http://localhost:3000/user`, select a company from the list, and start asking questions related to that company. If no company information is available, you can interact directly with the base LLM powered by DeepSeek.
+- **User ChatBox**: Visit the homepage at `http://localhost:3000/user`, select a company from the list, and start asking questions related to that company. If no company information is available, you can interact directly with the base LLM powered by DeepSeek.
 
 ## Deployment
 
