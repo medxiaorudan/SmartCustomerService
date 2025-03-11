@@ -12,6 +12,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/)
 - **Frontend**: [React](https://reactjs.org/) with [Next.js](https://nextjs.org/)
+- **LLM and Embedding Models**: [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama) and [bge-large](https://ollama.com/library/bge-large) deployed locally using [Ollama](https://ollama.com/)
 
 ## Getting Started
 
@@ -20,6 +21,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 - Python 3.8 or higher
 - Node.js 14 or higher
 - npm or yarn package manager
+- [Ollama](https://ollama.com/) installed for local deployment of LLM and embedding models
 
 ### Installation
 
@@ -29,7 +31,6 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
    git clone https://github.com/medxiaorudan/SmartCustomerService.git
    cd SmartCustomerService
    ```
-
 
 2. **Backend Setup**:
 
@@ -76,6 +77,32 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
      The frontend will be accessible at `http://localhost:3000`.
 
+4. **Ollama Setup for Local Deployment**:
+
+   - **Install Ollama**:
+
+     Download and install Ollama onto your platform. Instructions are available on the [Ollama website](https://ollama.com/).
+
+   - **Deploy DeepSeek-R1 Model Locally**:
+
+     Use Ollama to pull and run the DeepSeek-R1 model:
+
+     ```bash
+     ollama pull deepseek-v2
+     ```
+
+     This command downloads the DeepSeek-R1 model for local use. citeturn0search0
+
+   - **Deploy bge-large Embedding Model Locally**:
+
+     Similarly, pull the bge-large embedding model:
+
+     ```bash
+     ollama pull bge-large
+     ```
+
+     This command downloads the bge-large embedding model for local use. citeturn0search5
+
 ## Usage
 
 - **Admin Access**: Navigate to the admin login page at `http://localhost:3000/admin` and enter your credentials to upload or manage company information.
@@ -98,10 +125,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [DeepSeek](https://deepseek.ai/)
+- [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama)
+- [bge-large](https://ollama.com/library/bge-large)
+- [Ollama](https://ollama.com/)
 
 For more information, visit the project repository at [https://github.com/medxiaorudan/SmartCustomerService](https://github.com/medxiaorudan/SmartCustomerService). 
-
 
 ## TODO
 * Admin: Fix file upload
