@@ -1,8 +1,8 @@
-{ "company_name" : "tendium",
+{ "company_name" : "Tendium",
   "qa_history": [
     {
       "user": "Rudan",
-      "response": "What's Tendium working style"
+      "message": "What's Tendium working style"
     }
   ]
 }

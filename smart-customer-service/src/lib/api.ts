@@ -1,4 +1,4 @@
-const API_PATH = 'http://localhost:8000';
+const API_PATH = 'http://82.183.1.59:8000';
 // const API_PATH = 'https://0b01-82-183-1-59.ngrok-free.app';
 // const API_PATH = process.env.NEXT_PUBLIC_API_PATH;
 let SAVED_TOKEN: string = '-';
@@ -71,9 +71,13 @@ export async function sendMessage(companyName: string, message: string, username
     body: JSON.stringify({ company_name: companyName, qa_history: qaHistory }),
   };
   console.log(requestBody)
+  try {
+    const response = await fetch(`${API_PATH}/user/chat`, requestBody);
+    if (!response.ok) throw new Error("Failed to send message");
+    return response.json();
 
-  const response = await fetch(`${API_PATH}/user/chat`, requestBody);
+  } catch (e) {
+    console.error("Failed to send message", e);
+  }
 
-  if (!response.ok) throw new Error("Failed to send message");
-  return response.json();
 }

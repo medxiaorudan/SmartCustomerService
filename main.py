@@ -2,7 +2,6 @@ import logging
 import os
 from pathlib import Path
 from types import SimpleNamespace
-from typing import Annotated
 
 import jwt
 import datetime
@@ -35,19 +34,18 @@ tags_metadata = [
 
 app = FastAPI(openapi_tags=tags_metadata)
 
-origins = [
-    "http://localhost:3000",   # Local frontend
-    "https://829c-82-183-1-59.ngrok-free.app"  # NGROK Backend URL
-]
+# origins = [
+#     "http://localhost:3000",   # Local frontend
+#     "https://829c-82-183-1-59.ngrok-free.app"  # NGROK Backend URL
+# ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # Allows requests from these origins
+    allow_origins=["*"],  # Allows requests from these origins
     allow_credentials=True,
     allow_methods=["*"],  # Allow all HTTP methods (GET, POST, PUT, etc.)
     allow_headers=["*"],  # Allow all headers
 )
-
 
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):

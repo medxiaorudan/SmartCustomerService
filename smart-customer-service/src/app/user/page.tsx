@@ -25,7 +25,7 @@ export default function User() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 p-8">
       <div className="max-w-4xl mx-auto animate-fade-in">
         <h2 className="text-3xl font-bold text-slate-800 mb-8 transition-opacity duration-300">
-          Select Company Role
+          Select Company
         </h2>
 
         {loading ? (

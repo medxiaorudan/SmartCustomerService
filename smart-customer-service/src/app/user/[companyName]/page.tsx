@@ -99,9 +99,7 @@ export default function User() {
                   <span className="text-sm font-semibold">
                     {item.user === "User" ? "You" : item.user}
                   </span>
-                  <span className="text-xs opacity-75 ml-2">
-                    {new Date(item.timestamp).toLocaleTimeString()}
-                  </span>
+
                 </div>
                 <p className="whitespace-pre-wrap">{item.message}</p>
               </div>
