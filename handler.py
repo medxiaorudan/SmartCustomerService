@@ -25,7 +25,7 @@ async def source_data_handle(data_source: ApiAdminPayloads):
         faiss_vectorstore = FAISS.from_documents(text_documents,
                                                  OllamaEmbeddings(base_url=emb_config_list[0]["base_url"],
                                                                   model=emb_config_list[0]["model"]))
-        save_path = Path(f"./data/{data_source.company_name.strip().lower()}")
+        save_path = Path(f"./data/{data_source.company_name.strip()}")
         save_source(faiss_vectorstore, text_documents, save_path)
         print("Get valid data source")
         return True
@@ -53,7 +53,7 @@ def qa_stream_function(qa_init: ApiUserPayloads):
     init_question = "\n\n#########################\n\n".join(
         [f"{messages.user}\n{messages.response}" for messages in qa_init.qa_history])
 
-    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name.lower()}"))
+    vector_store, text_documents = load_source_cache(Path(f"./data/{qa_init.company_name}"))
     for chunk in stream_answer(init_question, text_documents, vector_store):
         # Format as proper NDJSON
         yield create_json_response("streaming", chunk)
