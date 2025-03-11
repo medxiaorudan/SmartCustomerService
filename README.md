@@ -1,6 +1,6 @@
 # SmartCustomerService
 
-SmartCustomerService is a Retrieval-Augmented Generation (RAG) -powered GenAI application designed to enhance customer interactions by providing a platform where users can inquire about company-specific information. Administrators can securely upload and manage company data, while users can select a company from a list and engage in informative conversations based on the provided details. Users can interact directly with a base Large Language Model (LLM) DeepSeek if no company information is available.
+SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI application designed to enhance customer interactions by providing a platform where users can inquire about company-specific information. Administrators can securely upload and manage company data, while users can select a company from a list and engage in informative conversations based on the provided details. Users can interact directly with a base Large Language Model (LLM) DeepSeek if no company information is available.
 
 ## Features
 
@@ -32,12 +32,6 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) -powered GenAI ap
 
 
 2. **Backend Setup**:
-
-   - Navigate to the backend directory:
-
-     ```bash
-     cd SmartCustomerService-main/
-     ```
 
    - Create and activate a virtual environment:
 
