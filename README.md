@@ -1,6 +1,7 @@
 # SmartCustomerService
 
 SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI application designed to enhance customer interactions by providing a platform where users can inquire about company-specific information. Administrators can securely upload and manage company data, while users can select a company from a list and engage in informative conversations based on the provided details. Users can interact directly with a base Large Language Model (LLM) DeepSeek if no company information is available.
+<img width="971" alt="image" src="https://github.com/user-attachments/assets/488c9c2b-2335-49c7-b1c1-ae37ff456628" />
 
 ## Features
 
@@ -12,7 +13,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/)
 - **Frontend**: [React](https://reactjs.org/) with [Next.js](https://nextjs.org/)
-- **LLM and Embedding Models**: [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama) and [bge-large](https://ollama.com/library/bge-large) deployed locally using [Ollama](https://ollama.com/)
+- **LLM and Embedding Models**: [DeepSeek-v2](https://ollama.com/library/deepseek-v2) and [bge-large](https://ollama.com/library/bge-large) deployed locally using [Ollama](https://ollama.com/)
 
 ## Getting Started
 
@@ -38,7 +39,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
      Download and install Ollama onto your platform. Instructions are available on the [Ollama website](https://ollama.com/).
 
-   - **Deploy DeepSeek-R1 Model Locally**:
+   - **Deploy DeepSeek-v2 Model Locally**:
 
      Use Ollama to pull and run the DeepSeek-v2 model:
 
@@ -46,7 +47,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
      ollama pull deepseek-v2
      ```
 
-     This command downloads the DeepSeek-R1 model for local use. 
+     This command downloads the DeepSeek-v2 model for local use. 
 
    - **Deploy bge-large Embedding Model Locally**:
 
@@ -126,7 +127,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama)
+- [DeepSeek-v2](https://ollama.com/library/deepseek-v2)
 - [bge-large](https://ollama.com/library/bge-large)
 - [Ollama](https://ollama.com/)
 
