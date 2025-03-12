@@ -1,6 +1,4 @@
-const API_PATH = 'http://82.183.1.59:8000';
-// const API_PATH = 'https://0b01-82-183-1-59.ngrok-free.app';
-// const API_PATH = process.env.NEXT_PUBLIC_API_PATH;
+const API_PATH = process.env.NEXT_PUBLIC_API_PATH;
 let SAVED_TOKEN: string = '-';
 
 export const getToken = async (password: string) => {
