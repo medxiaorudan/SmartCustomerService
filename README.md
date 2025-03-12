@@ -12,7 +12,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
 - **Backend**: [FastAPI](https://fastapi.tiangolo.com/)
 - **Frontend**: [React](https://reactjs.org/) with [Next.js](https://nextjs.org/)
-- **LLM and Embedding Models**: [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama) and [bge-large](https://ollama.com/library/bge-large) deployed locally using [Ollama](https://ollama.com/)
+- **LLM and Embedding Models**: [DeepSeek-v2](https://ollama.com/library/deepseek-v2) and [bge-large](https://ollama.com/library/bge-large) deployed locally using [Ollama](https://ollama.com/)
 
 ## Getting Started
 
@@ -38,7 +38,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
 
      Download and install Ollama onto your platform. Instructions are available on the [Ollama website](https://ollama.com/).
 
-   - **Deploy DeepSeek-R1 Model Locally**:
+   - **Deploy DeepSeek-v2 Model Locally**:
 
      Use Ollama to pull and run the DeepSeek-v2 model:
 
@@ -46,7 +46,7 @@ SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI app
      ollama pull deepseek-v2
      ```
 
-     This command downloads the DeepSeek-R1 model for local use. 
+     This command downloads the DeepSeek-v2 model for local use. 
 
    - **Deploy bge-large Embedding Model Locally**:
 
