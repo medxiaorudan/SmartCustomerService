@@ -1,6 +1,7 @@
 # SmartCustomerService
 
 SmartCustomerService is a Retrieval-Augmented Generation (RAG) powered GenAI application designed to enhance customer interactions by providing a platform where users can inquire about company-specific information. Administrators can securely upload and manage company data, while users can select a company from a list and engage in informative conversations based on the provided details. Users can interact directly with a base Large Language Model (LLM) DeepSeek if no company information is available.
+<img width="971" alt="image" src="https://github.com/user-attachments/assets/488c9c2b-2335-49c7-b1c1-ae37ff456628" />
 
 ## Features
 
