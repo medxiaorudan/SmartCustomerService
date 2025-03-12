@@ -126,7 +126,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
-- [DeepSeek-R1](https://www.datacamp.com/tutorial/deepseek-r1-ollama)
+- [DeepSeek-v2](https://ollama.com/library/deepseek-v2)
 - [bge-large](https://ollama.com/library/bge-large)
 - [Ollama](https://ollama.com/)
 
